@@ -1,0 +1,30 @@
+magic
+tech sky130A
+timestamp 1744378255
+<< metal1 >>
+rect 0 610 15 640
+rect 65 225 105 265
+rect 230 225 360 245
+rect 390 200 430 240
+rect 145 160 185 200
+rect 0 0 15 30
+use inverter  inverter_0
+timestamp 1744367018
+transform 1 0 360 0 1 50
+box -105 -50 85 590
+use nand  nand_0
+timestamp 1744370894
+transform 1 0 105 0 1 50
+box -105 -50 150 590
+<< labels >>
+flabel metal1 65 225 65 265 1 FreeSans 200 0 0 0 A
+port 1 n
+flabel metal1 145 160 145 200 1 FreeSans 200 0 0 0 B
+port 2 n
+flabel metal1 430 200 430 240 1 FreeSans 200 0 0 0 OUT
+port 3 n
+flabel metal1 0 610 0 640 3 FreeSans 200 0 0 0 VP
+port 4 e
+flabel metal1 0 0 0 30 3 FreeSans 200 0 0 0 VN
+port 5 e
+<< end >>
