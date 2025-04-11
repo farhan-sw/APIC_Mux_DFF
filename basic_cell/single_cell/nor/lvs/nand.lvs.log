@@ -1,0 +1,13 @@
+Netgen 1.5.293 compiled on Tue Mar 18 11:08:57 AM CET 2025
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Reading netlist file /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nor/lvs/nand.ext.spc
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8
+Creating placeholder cell definition.
+Reading netlist file /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nor/lvs/nand.sch.spc
+Call to undefined subcircuit sky130_fd_pr__nfet_01v8
+Creating placeholder cell definition.
+Call to undefined subcircuit sky130_fd_pr__pfet_01v8
+Creating placeholder cell definition.
