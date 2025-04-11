@@ -5,7 +5,6 @@ V {}
 S {}
 E {}
 N -280 -10 -280 10 {lab=GND}
-C {nand.sym} -130 -40 0 0 {name=x1}
 C {vsource.sym} -150 80 0 0 {name=V3 value=1.8 savecurrent=false}
 C {vsource.sym} -50 80 0 0 {name=V4 value="pulse(0 1.8 0ns 0.1ns 0.1ns 20ns 40ns)" savecurrent=false}
 C {vdd.sym} -150 50 0 0 {name=l6 lab=VDD}
@@ -28,3 +27,4 @@ tran 0.1ns 80ns
 plot v(A) v(B)+2 v(OUT)+4
 .endc
 "}
+C {/foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nand/nand.sym} -130 -40 0 0 {name=x1}
