@@ -1,0 +1,173 @@
+timestamp 1744388325
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use nand nand_2 1 0 2120 0 1 100
+use nand nand_0 1 0 590 0 1 100
+use nand nand_1 1 0 1100 0 1 100
+use nand nand_3 1 0 1610 0 1 100
+use inverter inverter_1 1 0 210 0 1 100
+port "VN" 6 0 0 0 60 m1
+port "Clk" 2 0 320 0 360 m1
+port "Qi" 4 2370 450 2370 530 m2
+port "Q" 3 2120 450 2120 530 m1
+port "D" 1 0 420 0 460 m1
+port "VP" 5 0 1220 0 1280 m1
+node "VN" 0 33.8752 0 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 180 0 0 0 0 0 0 0 0 0 0
+node "Clk" 4 280.789 0 320 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 50400 2520 0 0 0 0 0 0 0 0 0 0
+node "Qi" 6 567.968 2370 450 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48000 2320 39300 1960 0 0 0 0 0 0 0 0
+node "Q" 1 116.217 2120 450 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20000 920 0 0 0 0 0 0 0 0 0 0
+node "m1_1270_450#" 1 116.733 1270 450 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20000 920 0 0 0 0 0 0 0 0 0 0
+node "m1_760_450#" 8 607.693 760 450 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 79600 3900 34000 1540 0 0 0 0 0 0 0 0
+node "m1_270_400#" 1 57.5632 270 400 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 20000 900 0 0 0 0 0 0 0 0 0 0
+node "D" 6 562.45 0 420 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 63200 3080 31600 1420 0 0 0 0 0 0 0 0
+node "VP" 0 35.8447 0 1220 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 180 0 0 0 0 0 0 0 0 0 0
+node "li_2360_450#" 102 28.6141 2360 450 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 800 180 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_2110_450#" 102 27.8743 2110 450 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 800 180 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_2110_450#" 386 51.8656 2110 450 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 800 180 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "Clk" "D" 188.927
+cap "li_2110_450#" "Qi" 1.14898
+cap "m1_1270_450#" "Qi" 0.460552
+cap "li_2110_450#" "Q" 11.3998
+cap "m1_1270_450#" "Q" 16
+cap "D" "m1_270_400#" 138.167
+cap "Qi" "Q" 19.5754
+cap "VP" "D" 1.62963
+cap "Clk" "Qi" 5.41392
+cap "li_2110_450#" "m1_270_400#" 0.0253716
+cap "a_2110_450#" "D" 0.0659326
+cap "m1_760_450#" "D" 76.4432
+cap "a_2110_450#" "li_2110_450#" 1.8832
+cap "li_2110_450#" "li_2360_450#" 7.61194
+cap "a_2110_450#" "m1_1270_450#" 0.506914
+cap "Clk" "m1_270_400#" 114.54
+cap "m1_760_450#" "li_2110_450#" 0.111139
+cap "a_2110_450#" "Qi" 0.758184
+cap "m1_760_450#" "m1_1270_450#" 57.619
+cap "Qi" "li_2360_450#" 8.86673
+cap "a_2110_450#" "Q" 3.00528
+cap "m1_760_450#" "Qi" 455.608
+cap "m1_760_450#" "Q" 57.619
+cap "m1_760_450#" "Clk" 244.141
+cap "a_2110_450#" "m1_270_400#" 0.030572
+cap "m1_760_450#" "m1_270_400#" 19.6613
+cap "li_2110_450#" "D" 0.0558357
+cap "a_2110_450#" "li_2360_450#" 0.0953745
+cap "m1_1270_450#" "D" 19.5754
+cap "a_2110_450#" "m1_760_450#" 0.0935681
+cap "Qi" "D" 3.2
+cap "Q" "D" 0.460552
+cap "Clk" "VN" 4.25806
+cap "li_2110_450#" "m1_1270_450#" 0.458922
+cap "nand_2/VP" "nand_1/OUT" 14.0366
+cap "nand_2/VN" "nand_1/OUT" 5.44477
+cap "nand_0/B" "nand_2/B" 72.1978
+cap "nand_0/B" "nand_2/VP" 13.1136
+cap "nand_0/A" "nand_0/a_30_0#" 0.317563
+cap "nand_0/B" "nand_2/VN" 156.009
+cap "nand_2/A" "nand_0/A" 0.0150923
+cap "nand_1/A" "nand_2/A" 2.16026
+cap "nand_2/VP" "nand_2/B" -1.24651
+cap "nand_2/VN" "nand_2/B" 239.516
+cap "nand_1/A" "nand_0/A" 53.4274
+cap "nand_2/OUT" "nand_0/A" 0.0245997
+cap "nand_1/A" "nand_2/OUT" 1.2305
+cap "nand_2/VN" "nand_2/VP" -48.9629
+cap "nand_2/A" "nand_1/OUT" 4.247
+cap "nand_0/A" "nand_1/OUT" 0.0646966
+cap "nand_0/B" "nand_0/a_30_0#" 8.29704
+cap "nand_2/OUT" "nand_1/OUT" 3.08893
+cap "nand_1/A" "nand_1/OUT" 1.19644
+cap "nand_2/a_30_0#" "nand_2/B" 0.0240549
+cap "nand_0/B" "nand_1/a_30_0#" -1.8411
+cap "nand_2/B" "nand_0/a_30_0#" 10.862
+cap "nand_0/B" "nand_0/A" 56.9301
+cap "nand_2/A" "nand_2/B" 0.229585
+cap "nand_0/B" "nand_2/OUT" 1.20635
+cap "nand_2/VP" "nand_0/a_30_0#" -0.233788
+cap "nand_2/B" "nand_1/a_30_0#" 35.6473
+cap "nand_1/A" "nand_0/B" 58.5287
+cap "nand_3/a_30_0#" "nand_1/OUT" 0.332195
+cap "nand_2/VP" "nand_1/a_30_0#" -0.233788
+cap "nand_2/VN" "nand_0/a_30_0#" 0.317563
+cap "nand_1/A" "nand_2/B" 74.6254
+cap "nand_0/A" "nand_2/B" -0.381083
+cap "nand_2/OUT" "nand_2/B" 0.143004
+cap "nand_2/VN" "nand_1/a_30_0#" -2.81811
+cap "nand_0/A" "nand_2/VP" 113.76
+cap "nand_1/A" "nand_2/VP" 415.947
+cap "nand_1/A" "nand_2/VN" -21.6511
+cap "nand_2/VN" "nand_0/A" 12.2242
+cap "nand_0/B" "nand_1/OUT" 14.1526
+cap "nand_3/a_30_0#" "nand_2/B" 0.359349
+cap "nand_2/B" "nand_1/OUT" 52.4042
+cap "nand_2/VN" "nand_1/A" 0.13715
+cap "nand_2/OUT" "nand_2/VP" 25.9623
+cap "nand_2/B" "nand_1/OUT" 10.2972
+cap "nand_2/A" "nand_0/A" -0.0559436
+cap "nand_2/A" "nand_2/VP" 47.1151
+cap "nand_0/B" "nand_2/OUT" 3.09459
+cap "nand_2/B" "nand_2/a_30_0#" 32.0257
+cap "nand_2/VN" "nand_2/VP" -34.0536
+cap "nand_1/OUT" "nand_2/OUT" 12.1222
+cap "nand_3/a_30_0#" "nand_2/VP" -0.168144
+cap "nand_0/B" "nand_2/A" 0.19201
+cap "nand_2/B" "nand_2/OUT" 39.8942
+cap "nand_2/a_30_0#" "nand_2/OUT" 29.5898
+cap "nand_1/OUT" "nand_2/A" -12.7639
+cap "nand_0/B" "nand_2/VN" 0.267967
+cap "nand_2/VN" "nand_1/OUT" 6.18721
+cap "nand_2/B" "nand_2/A" 58.0099
+cap "nand_2/B" "nand_1/a_30_0#" 0.0797837
+cap "nand_2/a_30_0#" "nand_2/A" 0.332195
+cap "nand_2/B" "nand_2/VN" 169.116
+cap "nand_2/VN" "nand_2/a_30_0#" -10.7363
+cap "nand_2/B" "nand_3/a_30_0#" 29.9158
+cap "nand_2/OUT" "nand_2/A" 54.6907
+cap "nand_1/a_30_0#" "nand_2/OUT" 2.5587
+cap "nand_2/B" "nand_1/A" 0.0324614
+cap "nand_2/VN" "nand_2/OUT" 361.115
+cap "nand_2/OUT" "nand_3/a_30_0#" 24.2867
+cap "nand_0/a_30_0#" "nand_2/OUT" 0.587422
+cap "nand_2/VN" "nand_2/A" 1.97334
+cap "nand_2/VN" "nand_1/a_30_0#" 0.317563
+cap "nand_1/OUT" "nand_2/VP" 33.0785
+cap "nand_2/OUT" "nand_1/A" 1.14262
+cap "nand_2/B" "nand_2/VP" 9.33158
+cap "nand_2/VN" "nand_3/a_30_0#" -6.90781
+cap "nand_1/A" "nand_2/A" -0.121768
+cap "nand_2/a_30_0#" "nand_2/VP" -0.168144
+cap "nand_0/B" "nand_1/OUT" 8.31323
+cap "nand_2/OUT" "nand_0/A" 0.46417
+cap "nand_2/B" "nand_0/B" 0.0414136
+merge "inverter_1/VN" "VN" -374.927 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1800 -660 0 0 0 0 0 0 0 0 0 0
+merge "VN" "nand_3/VN"
+merge "nand_3/VN" "nand_1/VN"
+merge "nand_1/VN" "nand_0/VN"
+merge "nand_0/VN" "nand_2/VN"
+merge "nand_2/VN" "VSUBS"
+merge "nand_0/OUT" "nand_2/B" -524.854 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -640 0 0 0 0 0 0 0 0 0 0
+merge "nand_2/B" "m1_760_450#"
+merge "nand_3/B" "nand_2/OUT" -452.959 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -800 -180 -12800 -640 0 0 0 0 0 0 0 0 0 0
+merge "nand_2/OUT" "Qi"
+merge "Qi" "li_2360_450#"
+merge "nand_3/OUT" "nand_2/A" -307.495 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -800 -180 0 0 -800 -180 -12800 -640 0 0 0 0 0 0 0 0 0 0
+merge "nand_2/A" "Q"
+merge "Q" "li_2110_450#"
+merge "li_2110_450#" "a_2110_450#"
+merge "inverter_1/VP" "VP" -997.19 0 0 0 0 0 -5440 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1800 -660 0 0 0 0 0 0 0 0 0 0
+merge "VP" "nand_3/VP"
+merge "nand_3/VP" "nand_2/VP"
+merge "nand_2/VP" "nand_1/VP"
+merge "nand_1/VP" "nand_0/VP"
+merge "inverter_1/OUT" "nand_0/A" -247.925 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -640 0 0 0 0 0 0 0 0 0 0
+merge "nand_0/A" "m1_270_400#"
+merge "nand_1/B" "nand_0/B" -291.438 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6400 -400 0 0 0 0 0 0 0 0 0 0
+merge "nand_0/B" "Clk"
+merge "nand_3/A" "nand_1/OUT" -228.271 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -640 0 0 0 0 0 0 0 0 0 0
+merge "nand_1/OUT" "m1_1270_450#"
+merge "inverter_1/A" "nand_1/A" -477.753 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -640 0 0 0 0 0 0 0 0 0 0
+merge "nand_1/A" "D"
