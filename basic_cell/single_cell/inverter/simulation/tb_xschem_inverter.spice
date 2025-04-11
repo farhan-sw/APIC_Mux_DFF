@@ -1,11 +1,11 @@
 ** sch_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/inverter/tb_xschem_inverter.sch
-**.subckt tb_xschem_inverter A A OUT
-*.ipin A
+**.subckt tb_xschem_inverter A OUT A
 *.ipin A
 *.opin OUT
-x1 VDD A OUT GND inverter
-V1 VDD GND 1.8
-V2 A GND pulse(0 1.8 0ns 0.1ns 0.1ns 20ns 40ns)
+*.ipin A
+x2 VDD A OUT GND inverter
+V3 VDD GND 1.8
+V4 A GND pulse(0 1.8 0ns 0.1ns 0.1ns 20ns 40ns)
 **** begin user architecture code
 .lib /foss/pdks/sky130A/libs.tech/combined/sky130.lib.spice tt
 
@@ -20,7 +20,7 @@ plot v(A) v(OUT)+2
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  inverter.sym # of pins=4
+* expanding   symbol:  /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/inverter/inverter.sym # of pins=4
 ** sym_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/inverter/inverter.sym
 ** sch_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/inverter/inverter.sch
 .subckt inverter VP A OUT VN
