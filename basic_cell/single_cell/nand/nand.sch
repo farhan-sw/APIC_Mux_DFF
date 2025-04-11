@@ -29,15 +29,15 @@ N 80 -140 80 -130 {lab=VP}
 N -20 -140 20 -140 {lab=VP}
 N -0 -170 -0 -140 {lab=VP}
 N 0 90 0 110 {lab=#net1}
-N -0 60 80 60 {lab=#net1}
-N 80 60 80 100 {lab=#net1}
-N 0 100 80 100 {lab=#net1}
+N -0 60 80 60 {lab=VN}
+N 80 60 80 100 {lab=VN}
 N -0 140 80 140 {lab=VN}
 N 80 140 80 180 {lab=VN}
 N 0 180 80 180 {lab=VN}
 N 0 170 0 180 {lab=VN}
 N 0 180 0 190 {lab=VN}
 N -0 -0 160 0 {lab=OUT}
+N 80 100 80 140 {lab=VN}
 C {sky130_fd_pr/nfet_01v8.sym} -20 60 0 0 {name=M4
 W=1
 L=0.15
@@ -97,5 +97,5 @@ spiceprefix=X
 C {opin.sym} 160 0 0 0 {name=p1 lab=OUT}
 C {ipin.sym} -180 60 0 0 {name=p2 lab=A}
 C {ipin.sym} -180 140 0 0 {name=p3 lab=B}
-C {ipin.sym} 0 190 0 0 {name=p4 lab=VN}
-C {ipin.sym} 0 -170 0 0 {name=p5 lab=VP}
+C {ipin.sym} 0 190 0 0 {name=p5 lab=VN}
+C {ipin.sym} 0 -170 0 0 {name=p4 lab=VP}

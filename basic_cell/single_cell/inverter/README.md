@@ -24,5 +24,5 @@ The directory must contain the following files:
 ## LVS
 Run through the lvs folder
 ```bash
-iic-lvs.sh -l ../inverter.mag -s ../tb_magic_inverter/inverter.spice -c inverter
+iic-lvs.sh -l ../inverter.mag -s ../inverter.sch -c inverter
 ```
