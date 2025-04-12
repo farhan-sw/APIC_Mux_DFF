@@ -1,0 +1,130 @@
+** sch_path: /foss/designs/APIC_Mux_DFF/mux/xschem/tb_xschem_mux.sch
+**.subckt tb_xschem_mux A B A B D S S
+*.ipin A
+*.ipin B
+*.ipin A
+*.ipin B
+*.opin D
+*.ipin S
+*.ipin S
+V3 VDD GND 1.8
+V4 A GND pulse(0 1.8 0ns 0.1ns 0.1ns 13ns 26ns)
+V1 B GND pulse(0 1.8 0ns 0.1ns 0.1ns 17ns 34ns)
+V2 S GND pulse(0 1.8 0ns 0.1ns 0.1ns 30ns 60ns)
+x1 VDD D S A B GND mux
+**** begin user architecture code
+.lib /foss/pdks/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+.control
+save all
+tran 0.1ns 80ns
+plot V(A) V(B)+2 V(S)+4 V(D)+6
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  mux.sym # of pins=6
+** sym_path: /foss/designs/APIC_Mux_DFF/mux/xschem/mux.sym
+** sch_path: /foss/designs/APIC_Mux_DFF/mux/xschem/mux.sch
+.subckt mux VP D S A B VN
+*.ipin S
+*.ipin A
+*.ipin B
+*.opin D
+*.ipin VP
+*.ipin VN
+x1 VP S net1 VN inverter
+x0 VP net2 A net1 VN and
+x2 VP net2 S B VN and
+x3 VP D net2 net2 VN or
+.ends
+
+
+* expanding   symbol:  /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/inverter/inverter.sym # of pins=4
+** sym_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/inverter/inverter.sym
+** sch_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/inverter/inverter.sch
+.subckt inverter VP A OUT VN
+*.ipin A
+*.ipin VP
+*.ipin VN
+*.opin OUT
+XM1 OUT A VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 OUT A VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/APIC_Mux_DFF/basic_cell/and/xschem/and.sym # of pins=5
+** sym_path: /foss/designs/APIC_Mux_DFF/basic_cell/and/xschem/and.sym
+** sch_path: /foss/designs/APIC_Mux_DFF/basic_cell/and/xschem/and.sch
+.subckt and VP OUT B A VN
+*.ipin VP
+*.ipin B
+*.ipin A
+*.ipin VN
+*.opin OUT
+x1 VP net1 B A VN nand
+x2 VP net1 OUT VN inverter
+.ends
+
+
+* expanding   symbol:  /foss/designs/APIC_Mux_DFF/basic_cell/or/xschem/or.sym # of pins=5
+** sym_path: /foss/designs/APIC_Mux_DFF/basic_cell/or/xschem/or.sym
+** sch_path: /foss/designs/APIC_Mux_DFF/basic_cell/or/xschem/or.sch
+.subckt or VP OUT A B VN
+*.ipin VP
+*.ipin A
+*.ipin B
+*.ipin VN
+*.opin OUT
+x1 VP A B net1 VN nor
+x2 VP net1 OUT VN inverter
+.ends
+
+
+* expanding   symbol:  /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nand/nand.sym # of pins=5
+** sym_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nand/nand.sym
+** sch_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nand/nand.sch
+.subckt nand VP OUT B A VN
+*.ipin A
+*.ipin B
+*.opin OUT
+*.ipin VN
+*.ipin VP
+XM4 OUT B net1 VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 net1 A VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 OUT B VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 OUT A VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nor/nor.sym # of pins=5
+** sym_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nor/nor.sym
+** sch_path: /foss/designs/APIC_Mux_DFF/basic_cell/single_cell/nor/nor.sch
+.subckt nor VP A B OUT VN
+*.ipin A
+*.ipin B
+*.ipin VP
+*.ipin VN
+*.opin OUT
+XM1 OUT A VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 OUT B VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 OUT B net1 VP sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 A VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL VDD
+.GLOBAL GND
+.end
