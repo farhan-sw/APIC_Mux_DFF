@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+*.gaw
+*.raw
 
 # Compiled Object files
 *.slo
